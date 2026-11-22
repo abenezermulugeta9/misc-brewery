@@ -1,10 +1,14 @@
 package com.dotcom.misc_brewery.web.service;
 
 import com.dotcom.misc_brewery.web.model.BeerDto;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.UUID;
 
+@Slf4j
 @Service
 public class BeerServiceImpl implements BeerService {
 
@@ -30,6 +34,13 @@ public class BeerServiceImpl implements BeerService {
 
     @Override
     public void updateBeer(UUID beerId, BeerDto beerDto) {
-        // todo: implement updating beer object
+        // todo: implement updating beer
+    }
+
+    @Override
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteBeer(UUID beerId) {
+        // todo: implement deleting beer
+        log.debug("Deleting a beer...");
     }
 }
